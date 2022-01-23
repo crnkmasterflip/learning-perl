@@ -1,0 +1,11 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use Data::Dumper;
+use Spreadsheet::Read;
+
+my $workbook = ReadData ("test.xls");
+my $sheet = $workbook->[1];
+my @column = $sheet->{cell}[1];
+if (@column =~ /undef/) {dont do it;}
+print Dumper \@column
